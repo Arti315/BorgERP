@@ -1,6 +1,11 @@
 import 'package:borg_erp/providers/key_provider.dart';
+import 'package:borg_erp/providers/timer_provider.dart';
+import 'package:borg_erp/screens/dashbroad_screen.dart';
+import 'package:borg_erp/screens/history_screen.dart';
 import 'package:borg_erp/screens/login_screen.dart';
+import 'package:borg_erp/screens/profile_screen.dart';
 import 'package:borg_erp/screens/splash_screen.dart';
+import 'package:borg_erp/widgets/custom_bottom.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -22,6 +27,7 @@ class MyApp extends StatelessWidget {
           create: (context) => PasswordVisibilityProvider(), ),
               ChangeNotifierProvider(
           create: (context) => KeyProvider(), ),
+          ChangeNotifierProvider(create: (context)=>TimerProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -31,7 +37,10 @@ class MyApp extends StatelessWidget {
         ),
         routes:{
           '/':(context)=>SplashScreen(),
-          '/login':(context)=>LoginScreen()
+          '/login':(context)=>LoginScreen(),
+          '/dashbord':(context)=>CustomBottom(),
+          '/history' :(context)=>HistoryScreen(),
+          '/profile':(context)=>ProfileScreen()
         },
        initialRoute: '/',
       ),

@@ -62,7 +62,11 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
 
-            CustomButton(text: 'Log in', color: Colors.blueGrey),
+            GestureDetector(
+              onTap: (){
+                Navigator.pushNamed(context, "/dashbord");
+              },
+              child: CustomButton(text: 'Log in', color: Colors.blueGrey)),
           ],
         ),
       ),
