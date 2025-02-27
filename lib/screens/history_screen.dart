@@ -35,7 +35,7 @@ class _MyWidgetState extends State<HistoryScreen> {
                           border: Border.all(color: Colors.grey.shade300),
                             
                         ),
-                        child: new Row(
+                        child: Row(
                                
                                   children: <Widget>[
                                     Container(

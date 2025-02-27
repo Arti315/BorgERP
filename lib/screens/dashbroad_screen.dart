@@ -172,7 +172,7 @@ class DashbroadScreen extends StatelessWidget {
                         border: Border.all(color: Colors.grey.shade300),
                           
                       ),
-                      child: new Row(
+                      child: Row(
                              
                                 children: <Widget>[
                                   Container(

@@ -64,7 +64,7 @@ class TimerProvider extends ChangeNotifier {
 
     String monthName = monthNames[_currentDate.month - 1]; 
 // Get year as 4 digits
-    return '$monthName'; 
+    return monthName; 
     
    
   }
@@ -73,7 +73,7 @@ class TimerProvider extends ChangeNotifier {
 
     String day = _currentDate.day.toString(); 
 // Get year as 4 digits
-    return '$day'; 
+    return day; 
     
    
   }

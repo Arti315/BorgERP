@@ -1,11 +1,12 @@
 import 'package:borg_erp/screens/dashbroad_screen.dart';
 import 'package:borg_erp/screens/history_screen.dart';
+import 'package:borg_erp/screens/main_screen.dart';
 import 'package:borg_erp/screens/profile_screen.dart';
 import 'package:circle_nav_bar/circle_nav_bar.dart';
 import 'package:flutter/material.dart';
 
 class CustomBottom extends StatefulWidget {
-  const CustomBottom({Key? key}) : super(key: key);
+  const CustomBottom({super.key});
 
   @override
   State<CustomBottom> createState() => _MyHomePageState();
@@ -66,7 +67,7 @@ class _MyHomePageState extends State<CustomBottom>
         onPageChanged: (v) {
           tabIndex = v;
         },
-        children: [HistoryScreen(), DashbroadScreen(), ProfileScreen()],
+        children: [HistoryScreen(), MainScreen(), ProfileScreen()],
       ),
     );
   }

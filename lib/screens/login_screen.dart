@@ -26,7 +26,9 @@ class LoginScreen extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: CustomTextFormField(
                 controller: usernameController,
-                validator: (String) {},
+                validator: (String) {
+                  return null;
+                },
                 hintText: 'username',
                 isPasswordField: false,
               ),
@@ -35,7 +37,9 @@ class LoginScreen extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: CustomTextFormField(
                 controller: passwordController,
-                validator: (String) {},
+                validator: (String) {
+                  return null;
+                },
                 hintText: 'Password',
                 isPasswordField: true,
               ),

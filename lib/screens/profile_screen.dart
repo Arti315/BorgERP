@@ -1,4 +1,6 @@
 import 'package:borg_erp/widgets/custon_container.dart';
+import 'package:borg_erp/widgets/show_delete_account.dart';
+import 'package:borg_erp/widgets/show_dialuage.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -7,10 +9,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     // backgroundColor: Colors.white,
-      appBar: AppBar(title: Text("Settings"),
-      
-      ),
+      appBar: AppBar(title: Text("Settings")),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -19,15 +18,15 @@ class ProfileScreen extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                   border: Border.all(color: Colors.white),
-                    color: Colors.white,
-               boxShadow: [ 
-                  BoxShadow(
-                           color: Colors.black.withOpacity(0.2),
+                  border: Border.all(color: Colors.white),
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.2),
                       blurRadius: 2.0,
-                      offset: Offset(0.0, 0.1)
-                      ),
-                  ]
+                      offset: Offset(0.0, 0.1),
+                    ),
+                  ],
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -37,7 +36,7 @@ class ProfileScreen extends StatelessWidget {
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50),
-        
+
                           gradient: LinearGradient(
                             colors: [
                               Colors.blue,
@@ -73,7 +72,7 @@ class ProfileScreen extends StatelessWidget {
                                     size: 24,
                                   ),
                                 ),
-        
+
                                 TextSpan(
                                   text: '   Ziya sharma',
                                   style: TextStyle(
@@ -84,18 +83,23 @@ class ProfileScreen extends StatelessWidget {
                               ],
                             ),
                           ),
-        
+
                           RichText(
                             text: TextSpan(
                               children: [
                                 WidgetSpan(
                                   child: Icon(
-                                    Icons.cabin,
-                                    color: const Color.fromARGB(255, 7, 167, 33),
+                                    Icons.note,
+                                    color: const Color.fromARGB(
+                                      255,
+                                      7,
+                                      167,
+                                      33,
+                                    ),
                                     size: 24,
                                   ),
                                 ),
-        
+
                                 TextSpan(
                                   text: '  jobProfile',
                                   style: TextStyle(
@@ -106,18 +110,23 @@ class ProfileScreen extends StatelessWidget {
                               ],
                             ),
                           ),
-        
+
                           RichText(
                             text: TextSpan(
                               children: [
                                 WidgetSpan(
                                   child: Icon(
                                     Icons.phone,
-                                    color: const Color.fromARGB(255, 51, 63, 231),
+                                    color: const Color.fromARGB(
+                                      255,
+                                      51,
+                                      63,
+                                      231,
+                                    ),
                                     size: 24,
                                   ),
                                 ),
-        
+
                                 TextSpan(
                                   text: '   +91354366748',
                                   style: TextStyle(
@@ -143,7 +152,7 @@ class ProfileScreen extends StatelessWidget {
                                     size: 24,
                                   ),
                                 ),
-        
+
                                 TextSpan(
                                   text: '   Ziya@gmail.com',
                                   style: TextStyle(
@@ -161,11 +170,35 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20,),
-            CustomContainer(icons: Icon(Icons.logout,color: Colors.black54,), text: " Change Passward"),
-            CustomContainer(icons: Icon(Icons.edit,color: Colors.black54,), text: " Edit Profile"),
-            CustomContainer(icons: Icon(Icons.logout,color: Colors.black54,), text: " Log out"),
-            CustomContainer(icons: Icon(Icons.delete,color: Colors.black54,), text: "Delete"),
+            SizedBox(height: 20),
+              GestureDetector(
+              onTap: () => Navigator.pushNamed(context, '/changePass'),
+              child: CustomContainer(
+                icons: Icon(Icons.logout, color: Colors.black54),
+                text: " Change Passward",
+              ),
+            ),
+            GestureDetector(
+              onTap: () => Navigator.pushNamed(context, '/editProfile'),
+              child: CustomContainer(
+                icons: Icon(Icons.edit, color: Colors.black54),
+                text: " Edit Profile",
+              ),
+            ),
+            GestureDetector(
+              onTap: () => showLogoutDialog(context),
+              child: CustomContainer(
+                icons: Icon(Icons.logout, color: Colors.black54),
+                text: " Log out",
+              ),
+            ),
+            GestureDetector(
+              onTap: ()=>showDeleteDialog(context),
+              child: CustomContainer(
+                icons: Icon(Icons.delete, color: Colors.black54),
+                text: "Delete Account",
+              ),
+            ),
           ],
         ),
       ),
